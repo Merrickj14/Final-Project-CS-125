@@ -1,0 +1,168 @@
+/*
+Name: Jacob Merrick
+Date: 06/09/2026
+CS 125H - Lab 7, v4
+*/
+
+:root {
+    --dark: #1B263B;
+    --blue: #415A77;
+    --light-blue: #778DA9;
+    --bg: #E0E1DD;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 1.6em;
+    background: linear-gradient(to bottom, var(--bg), var(--white));
+    color: var(--dark);
+}
+
+a:link,
+a:visited,
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    margin: 0.5rem 0 1rem;
+}
+
+p::first-letter {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--blue);
+}
+
+header {
+    background-color: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem 1rem 0.5rem; 
+    margin-bottom: 0;
+}
+
+header h1 {
+    letter-spacing: 2px;
+    margin-bottom: 1rem; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: var(--blue);
+    margin-top: 0;     
+    padding: 0;
+}
+
+nav li {
+    flex: 1;
+}
+
+nav a {
+    display: block;
+    padding: 0.6rem;  
+    font-size: 0.95rem; 
+    text-align: center;
+    color: var(--white);
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: var(--light-blue);
+    color: var(--dark);
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+    background-color: var(--white);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+aside {
+    flex-basis: 25%;
+    background-color: var(--bg);
+    padding: 1rem;
+}
+
+section {
+    flex-basis: 75%;
+}
+
+main h2 {
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-left: 6px solid var(--blue);
+    background-color: #f1f3f5;
+}
+
+dt,
+article h3 {
+    color: var(--blue);
+    font-weight: bold;
+    margin: 1rem 0 0.5rem;
+    padding-left: 0.5rem;
+    border-left: 4px solid var(--light-blue);
+    background-color: #f8f9fa;
+}
+
+dd {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+section article {
+    background-color: #f1f3f5;
+    border: 1px solid var(--light-blue);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+section div {
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+section div img {
+    float: left;
+    width: 40%;
+    max-width: 250px;
+    margin: 0 1rem 1rem 0;
+    border-radius: 10px;
+}
+
+aside ul {
+    list-style: square;
+    padding-left: 1.5rem;
+}
+
+main ul {
+    margin: 0.5rem 0 1rem 1.5rem;
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--dark);
+}
+
+footer p {
+    text-align: center;
+    color: var(--white);
+}
