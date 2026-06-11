@@ -26,12 +26,20 @@ body {
     color: var(--dark);
 }
 
-a:link,
-a:visited,
+a:link {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--light-blue);
+}
+
 a:hover,
 a:focus {
-    text-decoration: none;
-    color: inherit;
+    color: var(--dark);
+    text-decoration: underline;
+    text-underline-offset: 6px;
 }
 
 p {
@@ -46,28 +54,47 @@ p::first-letter {
 
 header {
     background-color: var(--dark);
-    color: var(--white);
     text-align: center;
-    padding: 1.5rem 1rem 0.5rem; 
-    margin-bottom: 0;
 }
 
-header h1 {
+header h1 { 
+	color: var(--white) ;
     letter-spacing: 2px;
-    margin-bottom: 1rem; 
+	line-height: 1.5em ;
+    margin-bottom: 1rem;
+	padding: 1em;
+}
+
+nav {
+	width: 100%;
+	background-color: var(--blue);
+	margin: 0;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    background-color: var(--blue);
-    margin-top: 0;     
-    padding: 0;
+	max-width: 900px ;
+	margin: auto ;
 }
 
 nav li {
-    flex: 1;
+    flex: 1; 
+	padding: .6rem;
+} 
+
+nav a:link { 
+	font-size: 0.95rem;
+	color: var(--white);
+}
+
+nav a:visited {
+	color: var(--dark);
+}
+
+nav li:hover, nav li:focus {
+	background-color: var(--light-blue);
 }
 
 nav a {
@@ -78,29 +105,19 @@ nav a {
     color: var(--white);
 }
 
-nav a:hover,
-nav a:focus {
+nav:hover,
+nav:focus {
     background-color: var(--light-blue);
-    color: var(--dark);
 }
 
-main {
+main#home-layout {
     max-width: 900px;
     margin: auto;
     background-color: var(--white);
     padding: 1.5rem;
     display: flex;
     gap: 1rem;
-}
-
-aside {
-    flex-basis: 25%;
-    background-color: var(--bg);
-    padding: 1rem;
-}
-
-section {
-    flex-basis: 75%;
+	align-items: flex-start;
 }
 
 main h2 {
@@ -111,32 +128,36 @@ main h2 {
     background-color: #f1f3f5;
 }
 
-dt,
-article h3 {
-    color: var(--blue);
-    font-weight: bold;
-    margin: 1rem 0 0.5rem;
-    padding-left: 0.5rem;
-    border-left: 4px solid var(--light-blue);
-    background-color: #f8f9fa;
+main aside { 
+	flex-basis: 25%;
+	background-color: var(--bg); 
+	position: -webkit-sticky; 
+	position: sticky;
+	top: 0;
 }
 
-dd {
-    padding-left: 1rem;
-    margin-bottom: 1rem;
+main aside h2 { 
+	margin-top: 0; 
 }
 
-section article {
-    background-color: #f1f3f5;
-    border: 1px solid var(--light-blue);
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 5px;
+main aside ul {
+	list-style: square;
+	padding: 1rem;
+	margin-left: 1em; 
 }
 
-section div {
-    overflow: hidden;
-    margin-top: 1rem;
+main section { 
+	flex-basis: 75%;
+}
+
+section dd { 
+	padding-left: 1rem;
+	margin-bottom: 1rem;
+}
+
+section div { 
+	overflow: hidden;
+	margin-top: 1rem;
 }
 
 section div img {
@@ -147,19 +168,57 @@ section div img {
     border-radius: 10px;
 }
 
-aside ul {
-    list-style: square;
-    padding-left: 1.5rem;
+section dt,
+#otherpages article h3 {
+    color: var(--blue);
+    font-weight: bold;
+    margin: 1rem 0 0.5rem;
+    padding-left: 0.5rem;
+    border-left: 4px solid var(--light-blue);
+    background-color: #f8f9fa;
 }
 
-main ul {
-    margin: 0.5rem 0 1rem 1.5rem;
+main#otherpages {
+    max-width: 900px;
+    margin: auto;
+    background-color: var(--white);
+    padding: 1.5rem;
+}
+
+main#otherpages section h2 {
+	clear: both; 
+}
+
+main#otherpages section section {
+	display: block;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin: 1rem 0;
+}
+
+#otherpages section article {
+    background-color: #f1f3f5;
+    border: 1px solid var(--light-blue);
+    padding: 1rem;
+	margin-top: 0;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    flex: 1 1 40%;
+}
+
+#otherpages aside {
+    float: right;
+    width: 25%;
+    margin: 0 0 1rem 1rem;
+    background-color: var(--bg);
+    padding: 1rem;
 }
 
 footer {
     margin-top: 2rem;
     padding: 1rem;
-    background-color: var(--dark);
+    background-color: var(--dark); 
+	clear: both;
 }
 
 footer p {
